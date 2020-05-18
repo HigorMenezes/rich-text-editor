@@ -1,7 +1,8 @@
 import React from 'react';
+import Editor from '../pages/Editor';
 
 function App() {
-  return <div className="App">hi</div>;
+  return <Editor />;
 }
 
 export default App;
