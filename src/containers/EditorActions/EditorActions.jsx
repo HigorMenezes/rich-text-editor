@@ -22,4 +22,8 @@ EditorActions.defaultProps = {
   activeCommands: [],
 };
 
-export default EditorActions;
+export default React.memo(
+  EditorActions,
+  (prevProps, nextProps) =>
+    prevProps.activeCommands.toString() === nextProps.activeCommands.toString(),
+);

@@ -32,4 +32,4 @@ EditorContent.propTypes = {
   onCheckCommand: PropTypes.func.isRequired,
 };
 
-export default EditorContent;
+export default React.memo(EditorContent);

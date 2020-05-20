@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import { Container } from './EditorContainer.styles';
 
 import EditorActions from '../EditorActions';
@@ -10,12 +10,12 @@ const listCommands = ['bold', 'italic'];
 function EditorContainer() {
   const [activeCommands, setActiveCommands] = useState([]);
 
-  function handleCheckCommand() {
+  const handleCheckCommand = useCallback(() => {
     const currentActiveCommands = listCommands.filter((command) =>
       document.queryCommandState(command),
     );
     setActiveCommands(currentActiveCommands);
-  }
+  }, []);
 
   return (
     <Container>

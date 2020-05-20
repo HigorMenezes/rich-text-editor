@@ -23,4 +23,4 @@ ItalicButton.defaultProps = {
   active: false,
 };
 
-export default ItalicButton;
+export default React.memo(ItalicButton);

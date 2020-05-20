@@ -23,4 +23,4 @@ BoldButton.defaultProps = {
   active: false,
 };
 
-export default BoldButton;
+export default React.memo(BoldButton);
