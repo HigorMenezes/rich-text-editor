@@ -1,22 +1,14 @@
 import React from 'react';
 import Main from '../../layouts/Main';
-import { EditorContainer, EditorActions } from './Editor.styles';
-import Divider from '../../components/Divider';
-import BoldButton from '../../containers/BoldButton';
-import ItalicButton from '../../containers/ItalicButton';
-import EditorContent from '../../containers/EditorContent';
+import { Container } from './Editor.styles';
+import EditorContainer from '../../containers/EditorContainer';
 
 function Editor() {
   return (
     <Main>
-      <EditorContainer>
-        <EditorActions>
-          <BoldButton />
-          <ItalicButton />
-        </EditorActions>
-        <Divider />
-        <EditorContent />
-      </EditorContainer>
+      <Container>
+        <EditorContainer />
+      </Container>
     </Main>
   );
 }

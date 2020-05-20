@@ -8,7 +8,7 @@ function EditorContent() {
   }, []);
 
   function handleKeyDown(e) {
-    if (e.keyCode === 8 && !e.target.textContent) {
+    if (e.keyCode === 8 && e.target.innerHTML === '<p><br></p>') {
       e.preventDefault();
     }
   }
