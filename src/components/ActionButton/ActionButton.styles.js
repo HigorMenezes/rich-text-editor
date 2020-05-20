@@ -12,9 +12,11 @@ export const Container = styled.button`
   background-color: transparent;
   transition: background-color 0.1s ease;
 
+  ${(props) => props.active && `background-color: rgba(0, 0, 0, 0.1);`}
+
   &:hover,
   &:focus,
   &:active {
-    background-color: rgba(0, 0, 0, 0.05);
+    background-color: rgba(0, 0, 0, 0.1);
   }
 `;

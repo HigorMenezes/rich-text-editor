@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
 
 import { Container } from './EditorContent.styles';
 
-function EditorContent() {
+function EditorContent({ onCheckCommand }) {
   useEffect(() => {
     document.execCommand('defaultParagraphSeparator', false, 'p');
   }, []);
@@ -17,6 +18,7 @@ function EditorContent() {
     <Container
       contentEditable
       onKeyDown={handleKeyDown}
+      onSelect={onCheckCommand}
       suppressContentEditableWarning
     >
       <p>
@@ -25,5 +27,9 @@ function EditorContent() {
     </Container>
   );
 }
+
+EditorContent.propTypes = {
+  onCheckCommand: PropTypes.func.isRequired,
+};
 
 export default EditorContent;

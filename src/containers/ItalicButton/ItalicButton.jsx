@@ -1,17 +1,26 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import ActionButton from '../../components/ActionButton';
 import { ItalicIcon } from './ItalicButton.styles';
 
-function Italic() {
+function ItalicButton({ active }) {
   function handleItalic() {
     document.execCommand('italic');
   }
 
   return (
-    <ActionButton onClick={handleItalic}>
+    <ActionButton onClick={handleItalic} active={active}>
       <ItalicIcon />
     </ActionButton>
   );
 }
 
-export default Italic;
+ItalicButton.propTypes = {
+  active: PropTypes.bool,
+};
+
+ItalicButton.defaultProps = {
+  active: false,
+};
+
+export default ItalicButton;

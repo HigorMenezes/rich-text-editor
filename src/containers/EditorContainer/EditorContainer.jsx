@@ -1,16 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Container } from './EditorContainer.styles';
 
 import EditorActions from '../EditorActions';
 import EditorContent from '../EditorContent';
 import Divider from '../../components/Divider';
 
+const listCommands = ['bold', 'italic'];
+
 function EditorContainer() {
+  const [activeCommands, setActiveCommands] = useState([]);
+
+  function handleCheckCommand() {
+    const currentActiveCommands = listCommands.filter((command) =>
+      document.queryCommandState(command),
+    );
+    setActiveCommands(currentActiveCommands);
+  }
+
   return (
     <Container>
-      <EditorActions />
+      <EditorActions activeCommands={activeCommands} />
       <Divider />
-      <EditorContent />
+      <EditorContent onCheckCommand={handleCheckCommand} />
     </Container>
   );
 }
