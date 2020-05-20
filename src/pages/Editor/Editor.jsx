@@ -1,20 +1,22 @@
 import React from 'react';
 import Main from '../../layouts/Main';
-import { EditorActions, EditorContent } from './Editor.styles';
+import { EditorContainer, EditorActions } from './Editor.styles';
+import Divider from '../../components/Divider';
+import BoldButton from '../../containers/BoldButton';
+import ItalicButton from '../../containers/ItalicButton';
+import EditorContent from '../../containers/EditorContent';
 
 function Editor() {
-  function handleBold() {
-    document.execCommand('bold');
-  }
-
   return (
     <Main>
-      <EditorActions>
-        <button type="button" onClick={handleBold}>
-          Bold
-        </button>
-      </EditorActions>
-      <EditorContent contentEditable />
+      <EditorContainer>
+        <EditorActions>
+          <BoldButton />
+          <ItalicButton />
+        </EditorActions>
+        <Divider />
+        <EditorContent />
+      </EditorContainer>
     </Main>
   );
 }

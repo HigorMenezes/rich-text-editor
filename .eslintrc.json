@@ -22,6 +22,7 @@
   "plugins": ["react", "react-hooks", "import", "prettier", "jsx-a11y"],
   "rules": {
     "prettier/prettier": "error",
-    "import/prefer-default-export": 0
+    "import/prefer-default-export": 0,
+    "react/jsx-props-no-spreading": 0
   }
 }
