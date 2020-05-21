@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Container } from './EditorActions.styles';
 
+import Divider from '../../components/Divider';
+
 import BoldButton from '../BoldButton';
 import ItalicButton from '../ItalicButton';
 import UnderlineButton from '../UnderlineButton';
@@ -29,6 +31,7 @@ function EditorActions({ activeCommands, editorRef }) {
         editorRef={editorRef}
         active={activeCommands.includes('underline')}
       />
+      <Divider vertical />
       <SubscriptButton
         editorRef={editorRef}
         active={activeCommands.includes('subscript')}
@@ -37,6 +40,7 @@ function EditorActions({ activeCommands, editorRef }) {
         editorRef={editorRef}
         active={activeCommands.includes('superscript')}
       />
+      <Divider vertical />
       <JustifyLeftButton
         editorRef={editorRef}
         active={activeCommands.includes('justifyLeft')}
@@ -53,6 +57,7 @@ function EditorActions({ activeCommands, editorRef }) {
         editorRef={editorRef}
         active={activeCommands.includes('justifyFull')}
       />
+      <Divider vertical />
       <OrderedListButton
         editorRef={editorRef}
         active={activeCommands.includes('insertOrderedList')}
