@@ -11,6 +11,10 @@ const listCommands = [
   'underline',
   'subscript',
   'superscript',
+  'justifyLeft',
+  'justifyCenter',
+  'justifyRight',
+  'justifyFull',
 ];
 
 function EditorContainer() {
