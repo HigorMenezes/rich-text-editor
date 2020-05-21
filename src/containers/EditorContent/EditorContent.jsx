@@ -14,6 +14,11 @@ function EditorContent({ onCheckCommand, editorRef }) {
     }
   }
 
+  function handlePaste(e) {
+    e.preventDefault();
+    document.execCommand('inserttext', false, e.clipboardData.getData('text'));
+  }
+
   return (
     <Container
       contentEditable
@@ -21,6 +26,7 @@ function EditorContent({ onCheckCommand, editorRef }) {
       onKeyDown={handleKeyDown}
       onSelect={onCheckCommand}
       onFocus={onCheckCommand}
+      onPaste={handlePaste}
       suppressContentEditableWarning
     >
       <p>
