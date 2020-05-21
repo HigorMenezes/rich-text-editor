@@ -15,6 +15,8 @@ const listCommands = [
   'justifyCenter',
   'justifyRight',
   'justifyFull',
+  'insertOrderedList',
+  'insertUnorderedList',
 ];
 
 function EditorContainer() {

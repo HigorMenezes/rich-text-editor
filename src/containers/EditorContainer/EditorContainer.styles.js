@@ -25,6 +25,11 @@ const textEditorStyle = css`
   sup {
     vertical-align: super;
   }
+
+  ol {
+    list-style-type: decimal;
+    margin-left: 30px;
+  }
 `;
 
 export const Container = styled.div`
