@@ -20,6 +20,7 @@ function EditorContent({ onCheckCommand, editorRef }) {
       ref={editorRef}
       onKeyDown={handleKeyDown}
       onSelect={onCheckCommand}
+      onFocus={onCheckCommand}
       suppressContentEditableWarning
     >
       <p>

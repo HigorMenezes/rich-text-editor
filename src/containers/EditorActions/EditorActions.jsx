@@ -8,6 +8,7 @@ import UnderlineButton from '../UnderlineButton';
 import SubscriptButton from '../SubscriptButton';
 import SuperscriptButton from '../SuperscriptButton';
 import JustifyLeftButton from '../JustifyLeftButton';
+import JustifyCenterButton from '../JustifyCenterButton';
 
 function EditorActions({ activeCommands, editorRef }) {
   return (
@@ -35,6 +36,10 @@ function EditorActions({ activeCommands, editorRef }) {
       <JustifyLeftButton
         editorRef={editorRef}
         active={activeCommands.includes('justifyLeft')}
+      />
+      <JustifyCenterButton
+        editorRef={editorRef}
+        active={activeCommands.includes('justifyCenter')}
       />
     </Container>
   );
