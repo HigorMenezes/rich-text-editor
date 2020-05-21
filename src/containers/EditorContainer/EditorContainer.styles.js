@@ -1,6 +1,11 @@
 import styled, { css } from 'styled-components';
 
 const textEditorStyle = css`
+  p {
+    line-height: 1.25;
+    margin: 10px 0;
+  }
+
   b {
     font-weight: bold;
   }
