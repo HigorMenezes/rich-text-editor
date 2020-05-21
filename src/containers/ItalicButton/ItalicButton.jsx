@@ -3,9 +3,10 @@ import PropTypes from 'prop-types';
 import ActionButton from '../../components/ActionButton';
 import { ItalicIcon } from './ItalicButton.styles';
 
-function ItalicButton({ active }) {
+function ItalicButton({ active, editorRef }) {
   function handleItalic() {
     document.execCommand('italic');
+    editorRef.current.focus();
   }
 
   return (
@@ -17,10 +18,15 @@ function ItalicButton({ active }) {
 
 ItalicButton.propTypes = {
   active: PropTypes.bool,
+  editorRef: PropTypes.oneOfType([
+    PropTypes.func,
+    PropTypes.shape({ current: PropTypes.instanceOf(Element) }),
+  ]),
 };
 
 ItalicButton.defaultProps = {
   active: false,
+  editorRef: null,
 };
 
 export default React.memo(ItalicButton);

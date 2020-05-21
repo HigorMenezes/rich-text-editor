@@ -5,5 +5,5 @@ export const Container = styled.div`
   height: 1px;
   margin: 5px 0px;
   padding: 0px;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: #bdbdbd;
 `;

@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useRef, useCallback } from 'react';
 import { Container } from './EditorContainer.styles';
 
 import EditorActions from '../EditorActions';
@@ -9,6 +9,7 @@ const listCommands = ['bold', 'italic'];
 
 function EditorContainer() {
   const [activeCommands, setActiveCommands] = useState([]);
+  const editorRef = useRef();
 
   const handleCheckCommand = useCallback(() => {
     const currentActiveCommands = listCommands.filter((command) =>
@@ -19,9 +20,12 @@ function EditorContainer() {
 
   return (
     <Container>
-      <EditorActions activeCommands={activeCommands} />
+      <EditorActions activeCommands={activeCommands} editorRef={editorRef} />
       <Divider />
-      <EditorContent onCheckCommand={handleCheckCommand} />
+      <EditorContent
+        onCheckCommand={handleCheckCommand}
+        editorRef={editorRef}
+      />
     </Container>
   );
 }

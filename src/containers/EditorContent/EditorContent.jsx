@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import { Container } from './EditorContent.styles';
 
-function EditorContent({ onCheckCommand }) {
+function EditorContent({ onCheckCommand, editorRef }) {
   useEffect(() => {
     document.execCommand('defaultParagraphSeparator', false, 'p');
   }, []);
@@ -17,6 +17,7 @@ function EditorContent({ onCheckCommand }) {
   return (
     <Container
       contentEditable
+      ref={editorRef}
       onKeyDown={handleKeyDown}
       onSelect={onCheckCommand}
       suppressContentEditableWarning
@@ -30,6 +31,14 @@ function EditorContent({ onCheckCommand }) {
 
 EditorContent.propTypes = {
   onCheckCommand: PropTypes.func.isRequired,
+  editorRef: PropTypes.oneOfType([
+    PropTypes.func,
+    PropTypes.shape({ current: PropTypes.instanceOf(Element) }),
+  ]),
+};
+
+EditorContent.defaultProps = {
+  editorRef: null,
 };
 
 export default React.memo(EditorContent);

@@ -5,21 +5,32 @@ import { Container } from './EditorActions.styles';
 import BoldButton from '../BoldButton';
 import ItalicButton from '../ItalicButton';
 
-function EditorActions({ activeCommands }) {
+function EditorActions({ activeCommands, editorRef }) {
   return (
     <Container>
-      <BoldButton active={activeCommands.includes('bold')} />
-      <ItalicButton active={activeCommands.includes('italic')} />
+      <BoldButton
+        editorRef={editorRef}
+        active={activeCommands.includes('bold')}
+      />
+      <ItalicButton
+        editorRef={editorRef}
+        active={activeCommands.includes('italic')}
+      />
     </Container>
   );
 }
 
 EditorActions.propTypes = {
   activeCommands: PropTypes.arrayOf(PropTypes.string),
+  editorRef: PropTypes.oneOfType([
+    PropTypes.func,
+    PropTypes.shape({ current: PropTypes.instanceOf(Element) }),
+  ]),
 };
 
 EditorActions.defaultProps = {
   activeCommands: [],
+  editorRef: null,
 };
 
 export default React.memo(

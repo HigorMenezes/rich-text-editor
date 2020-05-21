@@ -1,8 +1,22 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+
+const textEditorStyle = css`
+  b {
+    font-weight: bold;
+  }
+
+  i {
+    font-style: italic;
+  }
+`;
 
 export const Container = styled.div`
   width: 100%;
-  padding: 10px 25px;
   border-radius: 5px;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  margin-top: 25px;
+  padding: 5px;
+  box-shadow: rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  background-color: white;
+
+  ${textEditorStyle}
 `;
