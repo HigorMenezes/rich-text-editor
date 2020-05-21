@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 const textEditorStyle = css`
   p {
     line-height: 1.25;
-    margin: 10px 0;
+    margin-bottom: 10px;
   }
 
   b {
@@ -28,6 +28,11 @@ const textEditorStyle = css`
 
   ol {
     list-style-type: decimal;
+    margin-left: 30px;
+  }
+
+  ul {
+    list-style-type: disc;
     margin-left: 30px;
   }
 `;

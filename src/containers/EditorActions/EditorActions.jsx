@@ -12,6 +12,7 @@ import JustifyCenterButton from '../JustifyCenterButton';
 import JustifyRightButton from '../JustifyRightButton';
 import JustifyFullButton from '../JustifyFullButton';
 import OrderedListButton from '../OrderedListButton';
+import UnorderedListButton from '../UnorderedListButton';
 
 function EditorActions({ activeCommands, editorRef }) {
   return (
@@ -55,6 +56,10 @@ function EditorActions({ activeCommands, editorRef }) {
       <OrderedListButton
         editorRef={editorRef}
         active={activeCommands.includes('insertOrderedList')}
+      />
+      <UnorderedListButton
+        editorRef={editorRef}
+        active={activeCommands.includes('insertUnorderedList')}
       />
     </Container>
   );
