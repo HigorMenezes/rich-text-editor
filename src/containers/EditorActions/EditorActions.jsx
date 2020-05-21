@@ -5,6 +5,7 @@ import { Container } from './EditorActions.styles';
 import BoldButton from '../BoldButton';
 import ItalicButton from '../ItalicButton';
 import SubscriptButton from '../SubscriptButton';
+import SuperscriptButton from '../SuperscriptButton';
 
 function EditorActions({ activeCommands, editorRef }) {
   return (
@@ -20,6 +21,10 @@ function EditorActions({ activeCommands, editorRef }) {
       <SubscriptButton
         editorRef={editorRef}
         active={activeCommands.includes('subscript')}
+      />
+      <SuperscriptButton
+        editorRef={editorRef}
+        active={activeCommands.includes('superscript')}
       />
     </Container>
   );

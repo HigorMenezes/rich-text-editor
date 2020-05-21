@@ -12,6 +12,10 @@ const textEditorStyle = css`
   sub {
     vertical-align: sub;
   }
+
+  sup {
+    vertical-align: super;
+  }
 `;
 
 export const Container = styled.div`
