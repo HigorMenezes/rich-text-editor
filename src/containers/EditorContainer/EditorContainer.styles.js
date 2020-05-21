@@ -9,6 +9,10 @@ const textEditorStyle = css`
     font-style: italic;
   }
 
+  u {
+    text-decoration: underline;
+  }
+
   sub {
     vertical-align: sub;
   }

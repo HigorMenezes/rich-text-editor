@@ -4,6 +4,7 @@ import { Container } from './EditorActions.styles';
 
 import BoldButton from '../BoldButton';
 import ItalicButton from '../ItalicButton';
+import UnderlineButton from '../UnderlineButton';
 import SubscriptButton from '../SubscriptButton';
 import SuperscriptButton from '../SuperscriptButton';
 
@@ -17,6 +18,10 @@ function EditorActions({ activeCommands, editorRef }) {
       <ItalicButton
         editorRef={editorRef}
         active={activeCommands.includes('italic')}
+      />
+      <UnderlineButton
+        editorRef={editorRef}
+        active={activeCommands.includes('underline')}
       />
       <SubscriptButton
         editorRef={editorRef}
