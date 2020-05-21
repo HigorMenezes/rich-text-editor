@@ -8,6 +8,10 @@ const textEditorStyle = css`
   i {
     font-style: italic;
   }
+
+  sub {
+    vertical-align: sub;
+  }
 `;
 
 export const Container = styled.div`

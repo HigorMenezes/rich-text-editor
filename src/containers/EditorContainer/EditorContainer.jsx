@@ -5,7 +5,7 @@ import EditorActions from '../EditorActions';
 import EditorContent from '../EditorContent';
 import Divider from '../../components/Divider';
 
-const listCommands = ['bold', 'italic'];
+const listCommands = ['bold', 'italic', 'subscript'];
 
 function EditorContainer() {
   const [activeCommands, setActiveCommands] = useState([]);
