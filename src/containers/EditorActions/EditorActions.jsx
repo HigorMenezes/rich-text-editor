@@ -10,6 +10,7 @@ import SuperscriptButton from '../SuperscriptButton';
 import JustifyLeftButton from '../JustifyLeftButton';
 import JustifyCenterButton from '../JustifyCenterButton';
 import JustifyRightButton from '../JustifyRightButton';
+import JustifyFullButton from '../JustifyFullButton';
 
 function EditorActions({ activeCommands, editorRef }) {
   return (
@@ -45,6 +46,10 @@ function EditorActions({ activeCommands, editorRef }) {
       <JustifyRightButton
         editorRef={editorRef}
         active={activeCommands.includes('justifyRight')}
+      />
+      <JustifyFullButton
+        editorRef={editorRef}
+        active={activeCommands.includes('justifyFull')}
       />
     </Container>
   );
