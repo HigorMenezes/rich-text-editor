@@ -5,34 +5,32 @@ import EditorActions from '../EditorActions';
 import EditorContent from '../EditorContent';
 import Divider from '../../components/Divider';
 
-const listCommands = [
-  'bold',
-  'italic',
-  'underline',
-  'subscript',
-  'superscript',
-  'justifyLeft',
-  'justifyCenter',
-  'justifyRight',
-  'justifyFull',
-  'insertOrderedList',
-  'insertUnorderedList',
-];
-
 function EditorContainer() {
-  const [activeCommands, setActiveCommands] = useState([]);
+  const [stateCommands, setStateCommands] = useState();
   const editorRef = useRef();
 
-  const handleCheckCommand = useCallback(() => {
-    const currentActiveCommands = listCommands.filter((command) =>
-      document.queryCommandState(command),
-    );
-    setActiveCommands(currentActiveCommands);
-  }, []);
+  const handleCheckCommand = useCallback(
+    () =>
+      setStateCommands({
+        fontSize: Number(document.queryCommandValue('fontSize')),
+        bold: document.queryCommandState('bold'),
+        italic: document.queryCommandState('italic'),
+        underline: document.queryCommandState('underline'),
+        subscript: document.queryCommandState('subscript'),
+        superscript: document.queryCommandState('superscript'),
+        justifyLeft: document.queryCommandState('justifyLeft'),
+        justifyCenter: document.queryCommandState('justifyCenter'),
+        justifyRight: document.queryCommandState('justifyRight'),
+        justifyFull: document.queryCommandState('justifyFull'),
+        insertOrderedList: document.queryCommandState('insertOrderedList'),
+        insertUnorderedList: document.queryCommandState('insertUnorderedList'),
+      }),
+    [],
+  );
 
   return (
     <Container>
-      <EditorActions activeCommands={activeCommands} editorRef={editorRef} />
+      <EditorActions stateCommands={stateCommands} editorRef={editorRef} />
       <Divider />
       <EditorContent
         onCheckCommand={handleCheckCommand}
