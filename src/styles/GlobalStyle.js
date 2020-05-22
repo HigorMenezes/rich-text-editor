@@ -1,7 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
-    /* http://meyerweb.com/eric/tools/css/reset/
+  /* http://meyerweb.com/eric/tools/css/reset/
     v2.0 | 20110126
     License: none (public domain)
   */
@@ -59,6 +59,7 @@ const GlobalStyle = createGlobalStyle`
   }
   body {
     background-color: #eeeeee;
+    font-family: "Roboto";
   }
 
 `;

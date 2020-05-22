@@ -8,6 +8,12 @@ function EditorContent({ onCheckCommand, editorRef }) {
     document.execCommand('defaultParagraphSeparator', false, 'p');
   }, []);
 
+  useEffect(() => {
+    if (editorRef.current) {
+      editorRef.current.focus();
+    }
+  }, [editorRef]);
+
   function handleKeyDown(e) {
     if (e.keyCode === 8 && e.target.innerHTML === '<p><br></p>') {
       e.preventDefault();

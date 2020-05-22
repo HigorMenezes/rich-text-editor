@@ -4,6 +4,8 @@ import { Container } from './EditorActions.styles';
 
 import Divider from '../../components/Divider';
 
+import FontNameSelect from '../FontNameSelect';
+import FontSizeSelect from '../FontSizeSelect';
 import BoldButton from '../BoldButton';
 import ItalicButton from '../ItalicButton';
 import UnderlineButton from '../UnderlineButton';
@@ -15,11 +17,12 @@ import JustifyRightButton from '../JustifyRightButton';
 import JustifyFullButton from '../JustifyFullButton';
 import OrderedListButton from '../OrderedListButton';
 import UnorderedListButton from '../UnorderedListButton';
-import FontSizeSelect from '../FontSizeSelect';
 
 function EditorActions({ stateCommands, editorRef }) {
   return (
     <Container>
+      <FontNameSelect editorRef={editorRef} fontName={stateCommands.fontName} />
+      <Divider vertical />
       <FontSizeSelect editorRef={editorRef} fontSize={stateCommands.fontSize} />
       <Divider vertical />
       <BoldButton editorRef={editorRef} active={stateCommands.bold} />
@@ -63,6 +66,8 @@ function EditorActions({ stateCommands, editorRef }) {
 
 EditorActions.propTypes = {
   stateCommands: PropTypes.shape({
+    fontName: PropTypes.string,
+    fontSize: PropTypes.number,
     bold: PropTypes.bool,
     italic: PropTypes.bool,
     underline: PropTypes.bool,
@@ -74,7 +79,6 @@ EditorActions.propTypes = {
     justifyFull: PropTypes.bool,
     insertOrderedList: PropTypes.bool,
     insertUnorderedList: PropTypes.bool,
-    fontSize: PropTypes.number,
   }),
   editorRef: PropTypes.oneOfType([
     PropTypes.func,
@@ -84,6 +88,7 @@ EditorActions.propTypes = {
 
 EditorActions.defaultProps = {
   stateCommands: {
+    fontName: 'Roboto',
     fontSize: 3,
     bold: false,
     italic: false,

@@ -12,6 +12,7 @@ function EditorContainer() {
   const handleCheckCommand = useCallback(
     () =>
       setStateCommands({
+        fontName: document.queryCommandValue('fontName').replace(/"/g, ''),
         fontSize: Number(document.queryCommandValue('fontSize')),
         bold: document.queryCommandState('bold'),
         italic: document.queryCommandState('italic'),
