@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import media from 'styled-media-query';
 
 const textEditorStyle = css`
   p {
@@ -46,4 +47,9 @@ export const Container = styled.div`
   background-color: white;
 
   ${textEditorStyle}
+
+  ${media.lessThan('800px')`
+    border-radius: 0px;
+    margin-top: 0px;
+  `}
 `;
